@@ -13,6 +13,16 @@ For development we recommend installing Tethys Platform using the script, rather
 
 * See: :ref:`developer_installation`
 
+Contributor Guide
+-----------------
+
+Review this guide to learn about how the Tethys Platform source code is organized and devleopment principles for how to contribute to the project.
+
+.. toctree::
+   :maxdepth: 2
+
+   contribute/contributor_guide
+
 Resources
 ---------
 
