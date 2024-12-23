@@ -14,6 +14,14 @@ Setup Development Environment
 
    dev_environment
 
+Development Process
+===================
+
+.. toctree::
+   :maxdepth: 1
+
+   development_process
+
 Coding Principles
 =================
 

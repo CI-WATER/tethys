@@ -16,7 +16,7 @@ This section describes how to get Tethys Platform up and running as a fresh inst
     
     For deploying a production instance of Tethys Portal, see :ref:`production_installation`.
     
-    To contribute to the Tethys Platform source code itself, see :ref:`developer_installation`.
+    To contribute to the Tethys Platform source code itself, see :ref:`setup_dev_environment`.
 
 Prerequisites
 -------------
@@ -63,7 +63,7 @@ a. To install ``tethys-platform`` into a new conda environment then run the foll
 
             conda create -n tethys -c tethysplatform/label/dev -c conda-forge tethys-platform
 
-    Alternatively, to install from source refer to the :ref:`developer_installation` docs.
+    Alternatively, to install from source refer to the :ref:`setup_dev_environment` docs.
 
 
 2. Activate the Tethys Conda Environment
@@ -149,6 +149,6 @@ Related Docs
     installation/showcase_apps
     installation/update
     installation/production
-    installation/developer_installation
+    contribute/dev_environment
     installation/using_docker
     installation/web_admin_setup
