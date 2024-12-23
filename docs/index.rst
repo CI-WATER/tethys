@@ -80,22 +80,22 @@ App Development
    tutorials
    dev_guides
 
-Deployment
-==========
+Production Installation
+=======================
 
 .. toctree::
    :maxdepth: 3
 
    installation/production
 
-Contributing
-============
+Contributing to Tethys Platform
+===============================
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
 
+   contribute
    repos
-   tethys_development
    supplementary
 
 Acknowledgements
