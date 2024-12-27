@@ -9,6 +9,8 @@ Contributing Code
 Getting Started Tutorial
 ========================
 
+Use this step-by-step guide to to guide you through the process of contributing to the Tethys Platform. It covers essential topics and initial steps to get you up and running quickly.
+
 .. toctree::
    :maxdepth: 1
 
@@ -16,6 +18,8 @@ Getting Started Tutorial
 
 Setup Development Environment
 =============================
+
+Use these instructions to setup a new development environment for modifying Tethys Platform. It includes steps for cloning the repository, installing dependencies, and configuring the development environment. It also describes how to use the installation script to automate Tethys Platform development installations.
 
 .. toctree::
    :maxdepth: 1
@@ -25,6 +29,8 @@ Setup Development Environment
 Development Process
 ===================
 
+This document provides an overview of the development process for Tethys Platform. It covers topics such as branching strategies, code reviews, and submitting pull requests to ensure a consistent and efficient development process.
+
 .. toctree::
    :maxdepth: 1
 
@@ -33,13 +39,17 @@ Development Process
 Coding Principles
 =================
 
+This section provides high-level explanations of the design, implementation, and motivations of various parts of Tethys Platform. It best used as a primer for understanding specific areas of the code you plan to work on. For instance, if you are interested in adding a new backend for the Tethys Jobs API, you should review the Tethys Jobs documentation to learn how the current backends are implemented.
+
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
 
    coding_principles
 
 Maintain Dependencies
----------------------
+=====================
+
+This section provides instructions on managing and updating project dependencies. It includes information on maintaining Tethys maintained dependencies, like Tethys Dataset Services, updating Tethys to be compatible with new versions of third-party dependencies, and maintaining the Conda-Forge packages for third-party dependencies.
 
 .. toctree::
    :maxdepth: 1
@@ -47,7 +57,9 @@ Maintain Dependencies
    dependencies
 
 Deploying New Versions
-----------------------
+======================
+
+This section describes the process of releasing new versions of the Tethys Platform. It includes steps for updating version numbers, preparing the documentation for a new version, and ensuring that all necessary components are properly built and deployed.
 
 .. toctree::
    :maxdepth: 1

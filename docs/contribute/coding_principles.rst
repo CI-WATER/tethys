@@ -22,8 +22,8 @@ Tethys CLI
 
     coding_principles/cli
 
-Tethys Compute
-==============
+Tethys Jobs
+===========
 
 .. toctree::
     :maxdepth: 1
