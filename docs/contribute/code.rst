@@ -6,6 +6,14 @@ Contributing Code
 
 **Last Updated:** December 2024
 
+Getting Started Tutorial
+========================
+
+.. toctree::
+   :maxdepth: 1
+
+   getting_started
+
 Setup Development Environment
 =============================
 

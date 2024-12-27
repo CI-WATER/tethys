@@ -12,8 +12,8 @@ How to Build Documentation
 * Create docs environment
 * Sphinx auto Build
 
-Sphinx Documentation
-====================
+Sphinx and ReStructured Text
+============================
 
 * Restructured Text
 * Links
@@ -28,6 +28,11 @@ Narrative Documentation
 
 * Tutorials
 * Recipes
+
+Internationalization
+====================
+
+* https://www.sphinx-doc.org/en/master/usage/advanced/intl.html
 
 Demonstation Apps
 =================

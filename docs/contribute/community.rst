@@ -8,6 +8,12 @@ Supporting the Community
 
 Issues and Discussions and Security
 
+Discussions
+===========
+
+* Start a Discussion
+* Comment on a Discussion
+
 Help with Issues
 ================
 
@@ -16,15 +22,16 @@ Help with Issues
 * Verify a fix for an Issue
 * Comment on an Issue
 
-Discussions
-===========
-
-* Start a Discussion
-* Comment on a Discussion
-
-
 Report a Security Vulnerability
 ===============================
 
 * Don't report as a normal issue
 * Use GitHub Security Advisories features
+
+Social Media
+============
+
+* TGF Blog
+* LinkedIn
+* Facebook
+* Instagram
