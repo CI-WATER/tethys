@@ -29,12 +29,22 @@ Use these instructions to setup a new development environment for modifying Teth
 Development Process
 ===================
 
-This document provides an overview of the development process for Tethys Platform. It covers topics such as branching strategies, code reviews, and submitting pull requests to ensure a consistent and efficient development process.
+This section describes the development process used for managing code contributions to Tethys Platform. It provides a a high-level description on common development activities like creating a fork of the repository, making changes on a feature branch, and submitting a pull request for review.
 
 .. toctree::
    :maxdepth: 1
 
    development_process
+
+Managing Issues
+===============
+
+This section explains how Issues are used to track bugs, feature requests, and other tasks for the Tethys Platform, and how they facilitate discussion, planning, and task assignment. It also highlights the need to reference relevant issues in pull requests and the importance of labeling issues for better categorization and prioritization.
+
+.. toctree::
+   :maxdepth: 1
+
+   issues
 
 Coding Principles
 =================

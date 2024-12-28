@@ -8,6 +8,8 @@ Supporting the Community
 
 Issues and Discussions and Security
 
+.. _contribute_community_discussions:
+
 Discussions
 ===========
 

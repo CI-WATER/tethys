@@ -41,7 +41,7 @@ The manual setup process involves cloning a copy of the Tethys Platform source c
 
     .. note::
 
-        If you do not have permission to push changes to the Tethys Platform repository, you should fork the repository on GitHub and clone your fork instead (see: :ref:`contribute_forking_and_branching`).
+        If you do not have permission to push changes to the Tethys Platform repository, you should fork the repository on GitHub and clone your fork instead (see: :ref:`contribute_forking`).
 
 2. Create a New Conda Environment
 ---------------------------------
