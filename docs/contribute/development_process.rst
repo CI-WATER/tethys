@@ -65,7 +65,15 @@ Once your changes are complete, you should push the branch to GitHub and open a 
 
 When creating a Pull Request, it's important to include a clear and concise description of the changes, including the motivation behind the changes, any relevant context, and any potential side effects. This helps reviewers understand the purpose of the changes and provide meaningful feedback. You should also reference related Issues, Pull Requests, or Discussions in the description to provide additional context.
 
+Assignees
+---------
+
 Assign yourself and any other contributors that worked on the changes as Assignees on the pull request.
+
+.. _contribute_pull_request_labels:
+
+Labels
+------
 
 Assign at least one of the following `Labels <https://docs.github.com/en/issues/using-labels-and-milestones-to-track-work/managing-labels>`_ to the Pull Request. The labels are used to group and summarize the changes in the release notes when a new version of Tethys Platform is released.
 
