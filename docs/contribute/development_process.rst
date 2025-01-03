@@ -4,7 +4,7 @@
 Development Process
 *******************
 
-**Last Updated:** December 2024
+**Last Updated:** January 2025
 
 .. _contribute_github_flow:
 
@@ -32,7 +32,23 @@ Create a Fork
 
 Most GitHub repositories, including Tethys Platform, restrict who can push changes directly to the repository. However, anyone can still contribute changes to Tethys Platform by creating a `Fork <https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo>`_ of the repository. A fork is a copy of the repository under your GitHub account, allowing you to make and push changes to it.
 
-To create a fork, navigate to the `Tethys Platform repository on GitHub <https://github.com/tethysplatform/tethys>`_ and click the "Fork" button in the top right corner. This will create a copy of the repository under your account, which you can clone to your local machine and make changes.
+To create a fork:
+
+1. Navigate to the `Tethys Platform repository on GitHub <https://github.com/tethysplatform/tethys>`_
+2. Click the **Fork** button in the top right corner.
+3. Select your GitHub account as the **Owner**.
+4. Update the repository name and description if desired.
+5. Keep the **Copy the ``main`` branch only** option checked on.
+6. Click **Create Fork** to create the fork.
+
+This will create a copy of the repository under your account, which will allow you to make new branches and push changes.
+
+If you already have a fork of the repository, ensure that it is up-to-date with the main repository before making changes. You can do this by syncing your fork with the main repository using the following steps:
+
+1. Navigate to your fork of the repository on GitHub.
+2. Click on the **Sync fork** button to update your fork with the latest changes from the main repository.
+
+This will ensure that your fork contains the latest changes from the main repository, reducing the likelihood of merge conflicts when submitting a Pull Request.
 
 .. _contribute_feature_branch:
 
