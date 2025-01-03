@@ -103,6 +103,8 @@ The manual setup process involves cloning a copy of the Tethys Platform source c
 Other Common Development Setups
 ===============================
 
+.. _setup_dev_environment_postgis:
+
 Use PostGIS Running in Docker
 -----------------------------
 
