@@ -4,7 +4,7 @@
 Setting Up Development Environment
 **********************************
 
-**Last Updated:** December 2024
+**Last Updated:** January 2025
 
 The first step in contributing code to Tethys Platform is setting up a development environment. This guide will walk you through the process of setting up a development environment for Tethys Platform.
 
@@ -128,6 +128,10 @@ The most common use case for this setup is to run the test suite. Another common
     .. code-block:: bash
 
         docker run  -d --name <POSTGIS_CONTAINER_NAME> -e POSTGRES_PASSWORD=mysecretpassword -p <DB_PORT>:5432 postgis/postgis
+
+    .. warning::
+
+        **DO NOT** use these instructions for production deployments. Instead, see :ref:`production_database`.
 
 2. Configure Tethys to use PostGIS Docker
 
