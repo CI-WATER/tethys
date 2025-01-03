@@ -4,13 +4,30 @@
 Maintaining Issues
 ******************
 
-**Last Updated:** December 2024
+**Last Updated:** January 2025
 
 `GitHub Issues <https://docs.github.com/en/issues/tracking-your-work-with-issues/about-issues>`_ are an important tool for managing the development work in Tethys Platform. They are used to track bugs, feature requests, and other tasks related to the project (see: https://github.com/tethysplatform/tethys/issues). Issues are used to discuss, plan, and coordinate work, assign tasks to contributors, and track progress.
 
 .. note::
 
     Don't confuse Issues with Discussions. Issues are used to track tasks and bugs, while Discussions are used for general conversations, questions, and technical support. For more on how Discussions are used in Tethys Platform, see :ref:`contribute_community_discussions`.
+
+.. _contribute_issues_creating:
+
+Creating Issues
+===============
+
+When you encounter a bug, have an idea for a new feature, or want to suggest an improvement, you can create a new Issue on the Tethys Platform GitHub repository. When creating a new Issue, it's important to provide a clear and detailed description of the problem or feature, including any relevant context, steps to reproduce, and potential solutions. We have provided templates for different types of issues with prompts to help you provide the necessary information.
+
+To create a new Issue follow these steps:
+
+1. Go to the `Issues <https://github.com/tethysplatform/tethys/issues>`_ tab on the Tethys Platform GitHub repository.
+2. Click on the **New Issue** button.
+3. Press the **Get Started** button next to the appropriate template for the type of Issue you want to create.
+4. Add a descriptive title and fill in the Issue template with the necessary information.
+5. Assign yourself as an Assignee if you plan to work on it yourself (see :ref:`contribute_issues_assigning`).
+6. Add appropriate labels to categorize the Issue (see :ref:`contribute_issues_labels`).
+7. Click the **Submit new issue** button to create the Issue.
 
 .. _contribute_issues_referencing:
 
@@ -28,16 +45,16 @@ Labeling Issues
 
 When creating a new issue, it's important to label it appropriately to help categorize and prioritize work. Labels help contributors identify issues that match their skills and interests and help maintainers prioritize and assign work. As a minimum, each issue should have one of the following labels:
 
-* `bug` - For bugs or issues that need to be fixed.
-* `feature request` - For new feature or enhancement proposals.
-* `docs` - For issues related to documentation updates.
-* `maintain dependencies` - For issues related to updating dependencies.
-* `continuous integration` - For issues related to the continuous integration process.
+* ``bug`` - For bugs or issues that need to be fixed.
+* ``feature request`` - For new feature or enhancement proposals.
+* ``docs`` - For issues related to documentation updates.
+* ``maintain dependencies`` - For issues related to updating dependencies.
+* ``continuous integration`` - For issues related to the continuous integration process.
 
 In addition consider adding one of the following labels as a tip for contributors looking for their next task:
 
-* `help wanted` - For issues that need help from the community.
-* `good first issue` - For issues that are suitable for first-time contributors.
+* ``help wanted`` - For issues that need help from the community.
+* ``good first issue`` - For issues that are suitable for first-time contributors.
 
 .. _contribute_issues_assigning:
 
