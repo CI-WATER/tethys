@@ -6,6 +6,9 @@ Testing
 
 **Last Updated:** January 2024
 
+
+.. _contribute_testing_setup_env:
+
 Setup Testing Environment
 =========================
 
@@ -29,6 +32,8 @@ The Tethys Platform test suite requires a PostgreSQL database and Tethys must be
 
 Your development environment should be ready for running the test suite.
 
+.. _contribute_testing_running_tests:
+
 Running Tests
 =============
 
@@ -43,6 +48,8 @@ The ``-u`` flag selects the Unit test suite to run, which is currently the only 
 .. code-block:: bash
 
     tethys test -f tests/unit_tests/test_tethys_apps/test_harvester.py
+
+.. _contribute_testing_test_results:
 
 Test Results
 ------------
@@ -95,6 +102,8 @@ If any tests fail, the output will indicate which tests failed and why. You can 
     FAILED (failures=1)
     Destroying test database for alias 'default'...
 
+.. _contribute_testing_coverage:
+
 Code Coverage
 -------------
 
@@ -104,7 +113,7 @@ Tethys Platform requires 100% test coverage for all new code. This means that ev
 
     tethys test -cu
 
-This will add a coverage report to the end of the test output. The coverage report will indiicate which files and which lines in the files are missing coverage, if any:
+This will add a coverage report to the end of the test output. The coverage report will indicate which files and which lines in the files are missing coverage, if any:
 
 .. code-block:: bash
 
@@ -115,6 +124,8 @@ This will add a coverage report to the end of the test output. The coverage repo
     TOTAL                   11177      2    99%
 
     173 files skipped due to complete coverage.
+
+.. _contribute_testing_linting:
 
 Code Style
 ==========
@@ -159,6 +170,8 @@ This is an example of the output you might see when running Black:
 
 To learn more about the Black code formatter, see the `Black documentation <https://black.readthedocs.io/en/stable/>`_.
 
+.. _contribute_testing_writing_tests:
+
 Writing Tests
 =============
 
@@ -175,10 +188,12 @@ Organization
 
 The Python tests are located in the :file:`tests` directory at the root of the repository. The tests are organized into subdirectories based on the module they are testing. For example, tests for the ``tethys_apps.harvester`` module are located in the :file:`tests/unit_tests/test_tethys_apps/test_harvester.py` file. This pattern is used to make finding tests easier and should be followed when adding new test files.
 
+.. _contribute_testing_mocking:
+
 Mocking
 +++++++
 
-As unit tests, the Python tests should be focused on testing the smallest units of code possible. This means that you should mock out any external service dependencies that are not the focus of the test such as GeoServer or HTCondor. When the tests are run during the GitHub action checks, these services won't be avaialble. The exception to this is the primary Tethys Platform database, which may be used in tests and will be available for checks (see below).
+As unit tests, the Python tests should be focused on testing the smallest units of code possible. This means that you should mock out any external service dependencies that are not the focus of the test such as GeoServer or HTCondor. When the tests are run during the GitHub action checks, these services won't be available. The exception to this is the primary Tethys Platform database, which may be used in tests and will be available for checks (see below).
 
 The `unittest.mock <https://docs.python.org/3/library/unittest.mock.html>`_ module is used to create mock objects in place of services or third-party library objects. The mock objects can be used to simulate the behavior of the real objects and control the return values of methods. For example, to mock the ``requests.get`` function, you could use the following code:
 
@@ -228,7 +243,7 @@ Consider this example from :file:`tests/unit_tests/test_tethys_apps/test_models/
             settings = app.settings_set.filter(name="new_setting")
             self.assertEqual(1, len(settings))
 
-The ``test_add_settings`` method tests the ``add_settings`` method of the ``TethysApp`` Django model. The test creates a new ``TethysAppSetting``, adds it to the app, and then verifies that the setting was added to the database. The test uses the ``TethysTestCase`` class to ensure that the test database is availalbe for the test.
+The ``test_add_settings`` method tests the ``add_settings`` method of the ``TethysApp`` Django model. The test creates a new ``TethysAppSetting``, adds it to the app, and then verifies that the setting was added to the database. The test uses the ``TethysTestCase`` class to ensure that the test database is available for the test.
 
 There are many examples of tests that interact with the database that can be found with a project-wide search for ``TethysTestCase``.
 
