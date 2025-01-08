@@ -11,13 +11,21 @@ Introduction
 
 If you are interested in contributing code to Tethys Platform, you have come to the right place. Perhaps you have an idea for a feature that you'd like to implement or there is a bug that you'd like to fix. Being able to contribute is one of the benefits of using open source software. The process can seem daunting at first, so this tutorial has been designed as a step-by-step guide to walk you through the process from start to finish.
 
+Getting Help
+============
+
+If you get stuck at any point during this tutorial, don't hesitate to ask for help. The Tethys Platform community is eager and willing to help you succeed. The best way to get help with this tutorial is to post a question under the `Tutorial Help <https://github.com/tethysplatform/tethys/discussions/categories/tutorial-help>`_ category of `Tethys Platform GitHub Discussions <https://github.com/tethysplatform/tethys/discussions>`_. Please include "Writing Your First Contribution Tutorial" in the title of your post to help others know what you are working on.
+
+.. tip::
+
+    See :ref:`contribute_intro_communication` for other common communication mechanisms.
+
 Learn Prerequisites
 ===================
 
 There are a number of prerequisites that you should be familiar with before you start contributing to Tethys Platform. If any of the topics in this section are unfamiliar to you, the provided links to other resources can help you get up to speed. None of this is required to start contributing, but the more you know about these topics, the easier it will be to contribute.
 
-Python 3
---------
+**Python 3**
 
 The primary programming language used in Tethys Platform is Python 3. The `Learn Python <https://www.learnpython.org/>`_ website is an excellent resource for learning Python. For those who want to go more in-depth, the free e-books `Think Python <http://greenteapress.com/thinkpython2/html/index.html>`_ and `Diving into Python 3 <https://diveintopython3.problemsolving.io/>`_ are great reads.
 
@@ -25,45 +33,40 @@ The primary programming language used in Tethys Platform is Python 3. The `Learn
 
     Make sure to learn Python version 3 syntax and features (preferably 3.8+). Python 2 has not been supported for some time.
 
-Django
-------
+**Django**
 
 Tethys Platform *is* a Django web application, composed of multiple Django apps. Many of Django's features are used in Tethys Platform development. As such, it is recommended that you complete the `Writing your first Django app <https://docs.djangoproject.com/en/5.1/intro/tutorial01/>`_ tutorial (Parts 1-8 and the Advanced tutorial) to learn how Django works.
 
-HTML and CSS
-------------
+**HTML and CSS**
 
 As a website project, knowing HTML and CSS will come in handy when contributing to Tethys Platform. They are used in Tethys for the frontend development. The `Learn HTML and CSS <https://www.learn-html.org/>`_ website is good resources for learning both HTML and CSS. In addition you should familiarize yourself with `Bootstrap <https://getbootstrap.com/docs/5.1/getting-started/introduction/>`_ which is used in Tethys Platform for layout and responsive development.
 
-Conda Environments
-------------------
+**Conda Environments**
 
 Conda is a commandline environment and package manager for Python. It is used in Tethys Platform development to manage dependencies. It is recommended that you install `Miniconda <https://docs.conda.io/en/latest/miniconda.html>`_ and the `libmamba solver <https://www.anaconda.com/blog/a-faster-conda-for-a-growing-community>`_. Then learn how to create and manage conda environments using the `Getting started with conda guide <https://docs.conda.io/projects/conda/en/latest/user-guide/getting-started.html>`_.
 
-Git
----
+**Git**
 
 Git is a distributed version control system that is used to manage the source code for Tethys Platform. For this tutorial, you will need to `Download and install Git <https://git-scm.com/downloads>`_. The `Learn Git Branching <https://learngitbranching.js.org/>`_ website illustrates Git concepts visually and is a great resource for learning Git basics.
 
-JavaScript (Optional)
----------------------
+**JavaScript (Optional)**
 
 JavaScript is an optional prerequisite that is used in Tethys Platform for the frontend development. Learning JavaScript is not required unless you plan to work on the frontend. The `Learn JavaScript <https://www.learn-js.org/>`_ website is a good resource for learning JavaScript.
 
-SQL (Optional)
---------------
+**SQL (Optional)**
 
 SQL is another optional prerequisite that is used occasionally in Tethys Platform development. Most database interaction is handled by the Django ORM, but there are times when you may need to write raw SQL queries. The `Learn SQL <https://www.learnsqlonline.org/>`_ website is a good resource for learning SQL.
 
-Code of Conduct and DCO
------------------------
+**Code of Conduct and DCO**
 
 A healthy community is important for the success of the project. You will be expected to follow the :ref:`Code of Conduct <contribute_intro_policies>`. In addition, a :ref:`contribute_intro_license` is used to ensure that all contributions are made with the proper permissions. Please review both documents and agree to their terms before contributing.
+
+.. _contribute_getting_started_decide:
 
 Decide What to Contribute
 =========================
 
-You don't have to have your own idea to contribute to Tethys Platform. There are many `Issues <https://github.com/tethysplatform/tethys/issues>`_ on GitHub that we need help with. Look for issues that are labeled as ``good first issue`` or ``help wanted``. These issues are specifically tagged to help new contributors get started. 
+You don't have to have your own idea to contribute to Tethys Platform. There are many `Issues <https://github.com/tethysplatform/tethys/issues>`_ on GitHub that need attention. Look for issues that are labeled as ``good first issue`` or ``help wanted``. These issues are specifically tagged to help new contributors get started. 
 
 Before you get started working on an issue, post a comment on the issue or assign yourself to it to let others know that you are working on it.
 
@@ -477,10 +480,10 @@ Run the tests on the :file:`test_version_command.py` file to verify that the new
     -------------------------------------
     TOTAL   11201      0   100%
 
-Check Code Style and Formatting
-===============================
+Check Code Style
+================
 
-Run the linter and formatter from the root directory of the repository to ensure that the code is properly formatted and follows the style guide (see: :ref:`contribute_testing_linting`). First run the linter and address any issues that are found:
+Run the linter from the root directory of the repository to ensure that the code adheres to code style requirements (see: :ref:`contribute_testing_linting`):
 
 .. code-block:: bash
 
@@ -493,15 +496,18 @@ If you copy-and-pasted the code examples above, there should be at least two iss
     ./tethys_cli/version_command.py:12:10: E131 continuation line unaligned for hanging indent
     ./tethys_cli/version_command.py:21:12: E222 multiple spaces after operator
 
-The output indicates the file, line number, and column number where the issue is located. Open the file in your text editor and fix the issues. After fixing the issues, run the linter again to verify that the issues have been resolved.
+The output indicates the file, line number, and column number where the issue is located. Open the file in your text editor and fix the issues. After fixing the issues, run the linter again to verify that the issues have been resolved. There will be no output if the linter doesn't find any issues.
 
-Next run the formatter to apply necessary formatting changes:
+Run Formatter
+=============
+
+Run the formatter from the root directory of the repository to ensure that the code is properly formatted (see: :ref:`contribute_testing_linting`):
 
 .. code-block:: bash
 
     black .
 
-This should output the files that were reformatted:
+This should output a list of files that were reformatted:
 
 .. code-block:: bash
 
@@ -603,6 +609,20 @@ Then push your changes to your fork on GitHub:
 
 Make a Pull Request
 ===================
+
+**Please don't do this for the tutorial**, but the next step would be to make a pull request. Review the steps in the :ref:`contribute_pull_request` documentation to learn how you would do this.
+
+Next Steps
+==========
+
+Congratulations! You have learned how to make code contributions to Tethys Platform. Here is a list of things that you can do next:
+
+  * Find something to work on and make your first contribution. Review the tips in the :ref:`contribute_getting_started_decide` section.
+  * Review the :ref:`contribute_development_process` documentation for a more detailed explanation of the development process.
+  * Learn more about the design and implementation of different Tethys Platform features in the :ref:`coding_principles` documentation.
+
+If you decide coding isn't your thing, there are many other ways to contribute to Tethys Platform. Check out the :ref:`contribute_intro_ways` section for more ideas.
+
 
 
 

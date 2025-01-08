@@ -74,24 +74,46 @@ Refer to the following documentation for help with writing tests and documentati
 
 .. _contribute_pull_request:
 
-Open a Pull Requests
-====================
+Open a Pull Request
+===================
 
-Once your changes are complete, you should push the branch to GitHub and open a `Pull Request (PR) <https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests>`_. A Pull Request allows others to review your changes, discuss potential improvements, and ensure that the code meets the project's standards. It's also an opportunity to run automated tests to catch any issues before merging.
+Once your changes are complete, you should push the branch to GitHub and open a `Pull Request (PR) <https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests>`_. A Pull Request allows others to review your changes, discuss potential improvements, and ensure that the code meets the project's standards. It's also an opportunity to run automated tests to catch any issues before merging. 
 
-When creating a Pull Request, it's important to include a clear and concise description of the changes, including the motivation behind the changes, any relevant context, and any potential side effects. This helps reviewers understand the purpose of the changes and provide meaningful feedback. You should also reference related Issues, Pull Requests, or Discussions in the description to provide additional context.
+.. _contribute_create_pull_request:
+
+Create a Pull Request
+---------------------
+
+To create a pull request do the following:
+
+1. Navigate to either `tethysplatform/tethys <https://github.com/tethysplatform/tethys>`_ or your fork of it on GitHub.
+2. Select the **Pull requests** tab.
+3. Click the **New pull request** button.
+4. Select ``tethysplatform/tethys`` as the **base repository**
+5. Select ``main`` as the **base branch**.
+6. Select the repository where your feature branch is located as the **head repository**.
+7. Select the feature branch as the **compare branch**.
+8. Review the list of commits and changes to make sure everything looks good.
+9. Click the **Create pull request** button.
+10. Fill out the Pull Request template with the necessary information (see below).
+11. Click the **Create pull request** button to submit the Pull Request.
+
+Title and Description
+---------------------
+
+When creating a Pull Request, it's important to include a clear and concise title and description of the changes, including the motivation behind the changes, any relevant context, and any potential side effects. This helps reviewers understand the purpose of the changes and provide meaningful feedback. You should also `reference related Issues, Pull Requests, or Discussions <https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/autolinked-references-and-urls#issues-and-pull-requests>`_ in the description to provide additional context. A template has been provided to help guide you through the process.
 
 Assignees
 ---------
 
-Assign yourself and any other contributors that worked on the changes as Assignees on the pull request.
+Select yourself and other contributors that worked on the changes under **Assignees**.
 
 .. _contribute_pull_request_labels:
 
 Labels
 ------
 
-Assign at least one of the following `Labels <https://docs.github.com/en/issues/using-labels-and-milestones-to-track-work/managing-labels>`_ to the Pull Request. The labels are used to group and summarize the changes in the release notes when a new version of Tethys Platform is released.
+Assign at least one of the following `Labels <https://docs.github.com/en/issues/using-labels-and-milestones-to-track-work/managing-labels>`_. These labels are used to group and summarize the changes in the release notes when a new version of Tethys Platform is released.
 
 * `experimental` - For experimental features or changes that are not yet stable.
 * `enhancement` - For improvements to existing features.

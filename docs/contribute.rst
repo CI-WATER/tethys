@@ -19,6 +19,8 @@ To get started with contributing to Tethys Platform, please do the following:
 
 However you plan to contribute, we are excited to have you on board and look forward to your contributions!
 
+.. _contribute_intro_ways:
+
 Ways to Contribute
 ==================
 
