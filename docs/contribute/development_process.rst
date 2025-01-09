@@ -17,13 +17,22 @@ Tethys Platform uses the `GitHub Flow <https://docs.github.com/en/get-started/us
 
 Here is a summary of the GitHub Flow process:
 
+0. :ref:`contribute_install_git`: Install Git on your local machine (first time only).
 1. :ref:`contribute_forking`: Create a fork of the Tethys Platform repository under your GitHub account.
-2. :ref:`contribute_feature_branch`: Create a new branch from the `main` branch to work on your changes.
-3. :ref:`contribute_make_changes`: Make your changes on the feature branch, following the project's coding standards and best practices.
-4. :ref:`contribute_pull_request`: Push your branch to GitHub and open a Pull Request to merge your changes into the `main` branch.
-5. :ref:`contribute_code_review`: Have your changes reviewed by other contributors to ensure they meet the project's standards.
-6. :ref:`contribute_checks`: Ensure that your changes pass all automated checks, such as code style, testing, and documentation.
-7. :ref:`contribute_merge`: Once the Pull Request has been approved, merge your changes back into the `main` branch.
+2. :ref:`contribute_clone_fork`: Clone your fork to your local machine to make changes.
+3. :ref:`contribute_feature_branch`: Create a new branch from the `main` branch to work on your changes.
+4. :ref:`contribute_make_changes`: Make your changes on the feature branch, following the project's coding standards and best practices.
+5. :ref:`contribute_pull_request`: Push your branch to GitHub and open a Pull Request to merge your changes into the `main` branch.
+6. :ref:`contribute_code_review`: Have your changes reviewed by other contributors to ensure they meet the project's standards.
+7. :ref:`contribute_checks`: Ensure that your changes pass all automated checks, such as code style, testing, and documentation.
+8. :ref:`contribute_merge`: Once the Pull Request has been approved, merge your changes back into the `main` branch.
+
+.. _contribute_install_git:
+
+Install Git
+===========
+
+To contribute to Tethys Platform, you will need to have `Git <https://git-scm.com/>`_ installed on your local machine. Git is a distributed version control system that allows you to track changes in your codebase, collaborate with others, and manage your code history. You can download Git from the `official website <https://git-scm.com/downloads>`_ and follow the installation instructions for your operating system.
 
 .. _contribute_forking:
 
@@ -49,6 +58,25 @@ If you already have a fork of the repository, ensure that it is up-to-date with 
 2. Click on the **Sync fork** button to update your fork with the latest changes from the main repository.
 
 This will ensure that your fork contains the latest changes from the main repository, reducing the likelihood of merge conflicts when submitting a Pull Request.
+
+.. _contribute_clone_fork:
+
+Clone your Fork
+===============
+
+1. Navigate to your fork of the repository on GitHub.
+2. Click on the **Code** button.
+3. Select **HTTPS** or **SSH** from the dropdown menu as the clone method.
+4. Copy the URL provided.
+5. Open a terminal on your local machine and run:
+
+.. code-block:: bash
+
+    git clone <COPIED_URL>
+
+.. note::
+
+   The **SSH** option requires you to have set up SSH keys on your computer and to have uploaded the public key to your GitHub account. To learn more, see: `Connecting to GitHub with SSH <https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh>`_.
 
 .. _contribute_feature_branch:
 
