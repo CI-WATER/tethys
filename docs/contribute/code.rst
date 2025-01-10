@@ -9,7 +9,7 @@ Contributing Code
 Getting Started Tutorial
 ========================
 
-Use this step-by-step guide to to guide you through the process of contributing to the Tethys Platform. It covers essential topics and initial steps to get you up and running quickly.
+Use this step-by-step guide to guide you through the process of contributing to the Tethys Platform. It covers essential topics and initial steps to get you up and running quickly.
 
 .. toctree::
    :maxdepth: 1
@@ -29,7 +29,7 @@ Use these instructions to setup a new development environment for modifying Teth
 Development Process
 ===================
 
-This section describes the development process used for managing code contributions to Tethys Platform. It provides a a high-level description on common development activities like creating a fork of the repository, making changes on a feature branch, and submitting a pull request for review.
+Learn about the development process used for managing code contributions to Tethys Platform. This guide provides a high-level description of common development activities like creating a fork of the repository, making changes on a feature branch, and submitting a pull request for review.
 
 .. toctree::
    :maxdepth: 1
@@ -39,7 +39,7 @@ This section describes the development process used for managing code contributi
 Managing Issues
 ===============
 
-This section explains how Issues are used to track bugs, feature requests, and other tasks for the Tethys Platform, and how they facilitate discussion, planning, and task assignment. It also highlights the need to reference relevant issues in pull requests and the importance of labeling issues for better categorization and prioritization.
+Understand how Issues are used to track bugs, feature requests, and other tasks for Tethys Platform, and how they facilitate discussion, planning, and task assignment. This guide highlights the need to reference relevant issues in pull requests and the importance of labeling issues for better categorization and prioritization.
 
 .. toctree::
    :maxdepth: 1
@@ -49,7 +49,7 @@ This section explains how Issues are used to track bugs, feature requests, and o
 Coding Principles
 =================
 
-This section provides high-level explanations of the design, implementation, and motivations of various parts of Tethys Platform. It best used as a primer for understanding specific areas of the code you plan to work on. For instance, if you are interested in adding a new backend for the Tethys Jobs API, you should review the Tethys Jobs documentation to learn how the current backends are implemented.
+Learn the high-level explanations of the design, implementation, and motivations of various parts of Tethys Platform. This guide is best used as a primer for understanding specific areas of the code you plan to work on. For instance, if you are interested in adding a new backend for the Tethys Jobs API, you should review the Tethys Jobs documentation to learn how the current backends are implemented.
 
 .. toctree::
    :maxdepth: 2
@@ -59,7 +59,7 @@ This section provides high-level explanations of the design, implementation, and
 Maintain Dependencies
 =====================
 
-This section provides instructions on managing and updating project dependencies. It includes information on maintaining Tethys maintained dependencies, like Tethys Dataset Services, updating Tethys to be compatible with new versions of third-party dependencies, and maintaining the Conda-Forge packages for third-party dependencies.
+Learn how to update and manage third party dependencies of Tethys Platform. This guide includes information on maintaining Tethys maintained dependencies, like Tethys Dataset Services, updating Tethys to be compatible with new versions of third-party dependencies, and maintaining the Conda-Forge packages for third-party dependencies.
 
 .. toctree::
    :maxdepth: 1
@@ -69,7 +69,7 @@ This section provides instructions on managing and updating project dependencies
 Deploying New Versions
 ======================
 
-This section describes the process of releasing new versions of the Tethys Platform. It includes steps for updating version numbers, preparing the documentation for a new version, and ensuring that all necessary components are properly built and deployed.
+Learn the process of releasing new versions of the Tethys Platform. This guide includes steps for updating version numbers, preparing the documentation for a new version, and ensuring that all necessary components are properly built and deployed.
 
 .. toctree::
    :maxdepth: 1
