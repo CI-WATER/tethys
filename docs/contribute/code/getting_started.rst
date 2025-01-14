@@ -386,7 +386,7 @@ Run the tests again on the :file:`test_version_command.py` file to verify that b
 
 .. code-block::
 
-    
+    TODO
 
 Write a New Test
 ================

@@ -149,6 +149,6 @@ Related Docs
     installation/showcase_apps
     installation/update
     installation/production
-    contribute/dev_environment
+    contribute/code/dev_environment
     installation/using_docker
     installation/web_admin_setup

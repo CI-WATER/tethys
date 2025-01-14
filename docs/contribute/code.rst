@@ -14,7 +14,7 @@ Use this step-by-step guide to guide you through the process of contributing to 
 .. toctree::
    :maxdepth: 1
 
-   getting_started
+   code/getting_started
 
 Setup Development Environment
 =============================
@@ -24,7 +24,7 @@ Use these instructions to setup a new development environment for modifying Teth
 .. toctree::
    :maxdepth: 1
 
-   dev_environment
+   code/dev_environment
 
 Development Process
 ===================
@@ -34,7 +34,17 @@ Learn about the development process used for managing code contributions to Teth
 .. toctree::
    :maxdepth: 1
 
-   development_process
+   code/development_process
+
+Writing Tests
+=============
+
+Understand the importance of writing tests for Tethys Platform and how to write tests for new features and bug fixes. This guide includes information on the different types of tests used in Tethys Platform, how to run tests, and how to write tests for new features.
+
+.. toctree::
+   :maxdepth: 1
+
+   code/testing
 
 Managing Issues
 ===============
@@ -44,7 +54,7 @@ Understand how Issues are used to track bugs, feature requests, and other tasks 
 .. toctree::
    :maxdepth: 1
 
-   issues
+   code/issues
 
 Coding Principles
 =================
@@ -54,7 +64,7 @@ Learn the high-level explanations of the design, implementation, and motivations
 .. toctree::
    :maxdepth: 2
 
-   coding_principles
+   code/coding_principles
 
 Maintain Dependencies
 =====================
@@ -64,7 +74,7 @@ Learn how to update and manage third party dependencies of Tethys Platform. This
 .. toctree::
    :maxdepth: 1
 
-   dependencies
+   code/dependencies
 
 Deploying New Versions
 ======================
@@ -74,4 +84,4 @@ Learn the process of releasing new versions of the Tethys Platform. This guide i
 .. toctree::
    :maxdepth: 1
 
-   deploying_tethys
+   code/deploying_tethys

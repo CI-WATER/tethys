@@ -92,13 +92,7 @@ Make Changes
 
 Once you have created a feature branch, you can start making your changes. This may involve adding new code, modifying existing code, fixing bugs, writing tests and/or updating documentation. It's important to follow the project's coding standards, best practices, and documentation guidelines to ensure that your changes are consistent with the rest of the codebase. Refer to the :ref:`contribute_checks` section below for a list of specific requirements. This helps maintain a clean and organized codebase and makes it easier for others to understand and contribute to the project.
 
-Refer to the following documentation for help with writing tests and documentation:
-
-.. toctree::
-    :maxdepth: 1
-
-    testing
-    documentation
+See the :ref:`contribute_documentation` and :ref:`contribute_testing` sections for more information on writing documentation and tests, respectively.
 
 .. _contribute_pull_request:
 
