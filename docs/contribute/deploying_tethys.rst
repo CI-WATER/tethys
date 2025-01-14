@@ -251,25 +251,31 @@ At the time of writing, there was no automated process for building the `Tethys 
 
 1. Clone the Tethys Platform repository to your local machine.
 2. Checkout the new release tag.
-3. Create a :file:`requirements.txt` file at the root of the repository with an updated list of dependencies. The :file:`environment.yml` can be used as a starting point for this. See `Pip Documentation | Requirements File Format <https://pip.pypa.io/en/stable/reference/requirements-file-format/>`_.
+3. Generate a :file:`requirements.txt` file using the ``tethys gen`` command.
+
+.. code-block:: bash
+
+    tethys gen requirements
 
 .. note::
 
-    Do not commit the :file:`requirements.txt` file to the repository. In the future this file will be generated automatically.
+    Do not commit the :file:`requirements.txt` file to the repository.
 
-4. Install the required packages for building and uploading the package:
+4. Review the :file:`requirements.txt` file, removing any conda-only or otherwise unnecessary packages such as ``libmambapy``.
+
+5. Install the required packages for building and uploading the package:
 
 .. code-block:: bash
 
     pip install setuptools twine build
 
-5. From the repository root, run this command to build the package:
+6. From the repository root, run this command to build the package:
 
 .. code-block:: bash
 
     python -m build
 
-6. Verify that the .whl and .tar.gz packages have been created in the new :file:`dist` directory. For example:
+7. Verify that the .whl and .tar.gz packages have been created in the new :file:`dist` directory. For example:
 
 .. code-block:: bash
 
@@ -277,7 +283,7 @@ At the time of writing, there was no automated process for building the `Tethys 
     ├── tethys_platform-<version>-py3-none-any.whl
     └── tethys_platform-<version>.tar.gz
 
-7. Upload the packages to PyPI using the ``twine`` program:
+8. Upload the packages to PyPI using the ``twine`` program:
 
 .. code-block:: bash
 
@@ -286,7 +292,7 @@ At the time of writing, there was no automated process for building the `Tethys 
 
 .. note::
 
-    You will need to have a PyPI account with necessary permissions to upload to the Tethys Platform package.
+    You will need to have a PyPI account with necessary permissions to upload to the Tethys Platform package. Contact a Tethys Platform admin for more information.
 
 
 .. tip::
