@@ -292,7 +292,7 @@ At the time of writing, there was no automated process for building the `Tethys 
 
 .. note::
 
-    You will need to have a PyPI account with necessary permissions to upload to the Tethys Platform package. Contact a Tethys Platform admin for more information.
+    You will need to have a PyPI account with necessary permissions to upload to the Tethys Platform package. Contact a Tethys Platform admin for more information (see :ref:`contribute_intro_communication`).
 
 
 .. tip::
