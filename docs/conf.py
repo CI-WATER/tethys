@@ -24,9 +24,12 @@ from setuptools_scm import get_version
 from sphinxawesome_theme import ThemeOptions, LinkIcon
 from sphinxawesome_theme.postprocess import Icons
 
+# ---------------------------------------------------------------------------------------------------------------------
 # Mock Dependencies
 # NOTE: No obvious way to automatically anticipate all the sub modules without
-# installing the package, which is what we are trying to avoid.
+# installing the package, which is what we are trying to avoid. For some reason
+# the autodoc_mock_imports does not work.
+# ---------------------------------------------------------------------------------------------------------------------
 MOCK_MODULES = [
     "bcrypt",
     "bokeh",
@@ -88,7 +91,7 @@ MOCK_MODULES = [
 ]
 
 
-# Mock dependency modules so we don't have to install them
+# Mock dependency modules so we don't have to install them to build the documentation (takes too long)
 # See: https://docs.readthedocs.io/en/latest/faq.html#i-get-import-errors-on-libraries-that-depend-on-c-modules
 class MockModule(mock.MagicMock):
     @classmethod
@@ -104,6 +107,10 @@ sys.modules.update((mod_name, MockModule()) for mod_name in MOCK_MODULES)
 
 # patcher = mock.patch("tethys_apps.models.register_custom_group")
 # patcher.start()
+
+# ---------------------------------------------------------------------------------------------------------------------
+# Configure Django
+# ---------------------------------------------------------------------------------------------------------------------
 
 # Fixes django settings module problem
 sys.path.insert(0, str(Path("..").absolute().resolve()))
@@ -137,7 +144,9 @@ except RuntimeError as e:
     if "settings already configured" in str(e).lower():
         pass
 
-# Sphinx extensions
+# ---------------------------------------------------------------------------------------------------------------------
+# Sphinx Configuration
+# ---------------------------------------------------------------------------------------------------------------------
 extensions = [
     "sphinx.ext.autodoc",
     "sphinx.ext.napoleon",
@@ -154,18 +163,12 @@ templates_path = ["_templates"]
 # The suffix of source filenames.
 source_suffix = ".rst"
 
-# The encoding of source files.
-# source_encoding = 'utf-8-sig'
-
 # The master toctree document.
 master_doc = "index"
 
 # General information about the project.
 project = "Tethys Platform"
 copyright = "2023, Tethys Platform"
-
-# on_rtd is whether we are on readthedocs.org, this line of code grabbed from docs.readthedocs.org
-on_rtd = environ.get("READTHEDOCS") == "True"
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -202,22 +205,6 @@ pygments_style = "sphinx"
 # typographically correct entities.
 smartquotes = False
 
-# Output file base name for HTML help builder.
-htmlhelp_basename = f"{project}doc"
-
-# Grouping the document tree into LaTeX files. List of tuples
-# (source start file, target name, title,
-#  author, documentclass [howto, manual, or own class]).
-latex_documents = [
-    (
-        "index",
-        "TethysPlatform.tex",
-        "Tethys Platform Documentation",
-        "Nathan Swain",
-        "manual",
-    ),
-]
-
 # markup to shorten external links (see: http://www.sphinx-doc.org/en/stable/ext/extlinks.html)
 install_tethys_link = "https://raw.githubusercontent.com/tethysplatform/tethys/{}/scripts/install_tethys.%s".format(
     branch
@@ -225,35 +212,18 @@ install_tethys_link = "https://raw.githubusercontent.com/tethysplatform/tethys/{
 
 extlinks = {"install_tethys": (install_tethys_link, None)}
 
-# -- Options for manual page output ---------------------------------------
-# One entry per manual page. List of tuples
-# (source start file, name, description, authors, manual section).
-man_pages = [
-    ("index", "tethysplatform", "Tethys Platform Documentation", ["Nathan Swain"], 1)
-]
-
-# -- Options for Texinfo output -------------------------------------------
-
-# Grouping the document tree into Texinfo files. List of tuples
-# (source start file, target name, title, author,
-#  dir menu entry, description, category)
-texinfo_documents = [
-    (
-        "index",
-        "TethysPlatform",
-        "Tethys Platform Documentation",
-        "Nathan Swain",
-        "TethysPlatform",
-        "One line description of project.",
-        "Miscellaneous",
-    ),
-]
-
-# If this is True, todo and todolist produce output, else they produce nothing. The default is False.
+# If this is True, todo and todo list produce output, else they produce nothing. The default is False.
 todo_include_todos = True
 
 # If this is True, todo emits a warning for each TODO entries. The default is False.
 todo_emit_warnings = True
+
+# --------------------------------------------------------------------------------------------------------------------
+# Read the Docs Configuration
+# --------------------------------------------------------------------------------------------------------------------
+
+# on_rtd is whether we are on readthedocs.org, this line of code grabbed from docs.readthedocs.org
+on_rtd = environ.get("READTHEDOCS") == "True"
 
 # Define the canonical URL if you are using a custom domain on Read the Docs
 html_baseurl = environ.get("READTHEDOCS_CANONICAL_URL", "")
@@ -264,11 +234,12 @@ if environ.get("READTHEDOCS", "") == "True":
         html_context = {}
     html_context["READTHEDOCS"] = True
 
-# html_title = f"{project} Documentation"
+# --------------------------------------------------------------------------------------------------------------------
+# HTML Theme Configuration
+# --------------------------------------------------------------------------------------------------------------------
+
 html_title = ""
-# html_short_title = "Tethys Docs"
 html_short_title = ""
-# html_logo = "images/features/tethys-logo-75.png"
 html_favicon = "images/default_favicon.ico"
 html_static_path = ["_static"]
 html_css_files = [
@@ -300,5 +271,5 @@ html_theme_options = asdict(theme_options)
 
 html_collapsible_definitions = True
 
-# Link icon for header links instead of pharagraph icons that are the default
+# Link icon for header links instead of paragraph icons that are the default
 html_permalinks_icon = Icons.permalinks_icon
