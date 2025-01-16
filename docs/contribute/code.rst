@@ -46,6 +46,16 @@ Understand the importance of writing tests for Tethys Platform and how to write 
 
    code/testing
 
+Continuous Integration and Automation
+=====================================
+
+Learn about the continuous integration and automation tools used to test and deploy Tethys Platform. This guide includes information on the continuous integration services used by Tethys Platform and how to configure and maintain them.
+
+.. toctree::
+   :maxdepth: 1
+
+   code/continuous_integration
+
 Managing Issues
 ===============
 

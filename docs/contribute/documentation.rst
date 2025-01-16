@@ -40,6 +40,16 @@ Take in this high-level explanation of Tethys Platform documentation source file
 
    documentation/source
 
+Publishing
+==========
+
+Learn about how Tethys Platform uses Read the Docs to publish the documentation. This guide will help you understand how the documentation is built and published to the web.
+
+.. toctree::
+   :maxdepth: 2
+
+   documentation/readthedocs
+
 Demonstrations
 ==============
 
