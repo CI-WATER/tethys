@@ -66,38 +66,12 @@ Reference documentation is the documentation that is written in a more concise, 
    * :file:`tethys_sdk/` (mixed)
 
 
-.. _contribute_docs_docstrings_rst:
+.. _contribute_docs_python_docstrings:
 
-Docstrings in RST
+Python Docstrings
 -----------------
 
-The detailed descriptions of classes, functions, and methods that are found in the documentation are automatically generated from the Google Style Python Docstrings in the Python code using . Developers write docstrings as part of the development process. An example of a Google style docstring is shown below:
-
-.. code-block:: Python
-
-   def some_function(arg1, arg2):
-       """
-       This is a Google style docstring.
-       Args:
-           arg1 (int): The first argument.
-           arg2 (str): The second argument.
-       Returns:
-           bool: The return value. True for success, False otherwise.
-       """
-       return True
-
-
-A doc string is included in an RST file using the `autodoc <https://www.sphinx-doc.org/en/master/usage/extensions/autodoc.html>`_ and `napoleon <https://sphinxcontrib-napoleon.readthedocs.io/en/latest/index.html>`_ extensions. An example of the RST syntax for including a docstring in the documentation is shown below:
-
-.. code-block:: rst
-
-   .. automodule:: tethys_apps.base.controller
-
-   .. autoclass:: tethys_sdk.gizmos.MapView
-
-   .. automethod:: tethys_sdk.base.TethysAppBase.spatial_dataset_service_settings
-
-For more information on using ``autodoc``, see the `Sphinx documentation | sphinx.ext.autodoc <https://www.sphinx-doc.org/en/master/usage/extensions/autodoc.html>`_.
+The Python codebase includes documentation in the form Google Style Docstrings. These docstrings are included in the documentation using the `autodoc <https://www.sphinx-doc.org/en/master/usage/extensions/autodoc.html>`_ and `napoleon <https://sphinxcontrib-napoleon.readthedocs.io/en/latest/index.html>`_ See :ref:`contribute_docs_docstrings` for guidance on writing and including docstrings in the documentation.
 
 .. _contribute_docs_configuration:
 
@@ -105,8 +79,6 @@ The ``conf.py`` file
 ====================
 
 The :file:`conf.py` file is the Sphinx configuration file for the documentation. It contains settings that control how the documentation is built. The file is organized into sections that control different aspects of the documentation build process. It is sometimes necessary to modify or update this file so a brief explanation of the important sections of the document are described below.
-
-
 
 Mock Dependencies
 -----------------
