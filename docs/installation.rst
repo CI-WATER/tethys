@@ -25,6 +25,7 @@ Tethys Platform requires the `conda packaging system <https://docs.conda.io/en/l
 
 Also, be sure that the system you are using meets the minimum :ref:`system_reqs`.
 
+.. _getting_started_install_tethys:
 
 1. Install the ``tethys-platform`` Conda Package
 ------------------------------------------------
