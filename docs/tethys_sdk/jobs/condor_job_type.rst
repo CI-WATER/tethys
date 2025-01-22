@@ -1,3 +1,5 @@
+.. _tethys_jobs_condor:
+
 ***************
 Condor Job Type
 ***************

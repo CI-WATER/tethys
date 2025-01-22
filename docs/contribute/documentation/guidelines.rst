@@ -144,12 +144,12 @@ Download files should be stored in a ``resources`` subdirectory near where the d
 
     For more details on the ``download`` role, see `Referencing downloadable files <https://www.sphinx-doc.org/en/master/usage/referencing.html#referencing-downloadable-files>`_.
 
-.. _contribute_docs_headers:
+.. _contribute_docs_headings:
 
-Headers
-=======
+Headings
+========
 
-Every reStructuredText (RST) page should have a title header marked with lines of "*" characters on top and bottom that are the same length as the title:
+Every reStructuredText (RST) page should have a title heading marked with lines of "*" characters on top and bottom that are the same length as the title:
 
 .. code-block:: rst
 
@@ -171,10 +171,10 @@ The **Last Updated** date should follow immediately after the page title, follow
 
     You may encounter some pages with older style dates that include the day; please remove the day and update it to the new format.
 
-Sub Headers
------------
+Sub Headings
+------------
 
-RST syntax allows for multiple levels of headers by using different characters to underline the header text. For consistency, please use "=" for Header 1, "-" for Header 2, and "+" for Header 3. Avoid using more than three levels of headers. 
+RST syntax allows for multiple levels of headings by using different characters to underline the heading text. For consistency, please use "=" for Heading 1, "-" for Heading 2, and "~" for Heading 3, and "+" for Heading 4". Avoid using more than four levels of headings. 
 
 .. code-block:: rst
 
@@ -185,12 +185,15 @@ RST syntax allows for multiple levels of headers by using different characters t
     ---------
 
     Heading 3
+    ~~~~~~~~~
+
+    Heading 4
     +++++++++
 
-Full Page Header Example
-------------------------
+Full Page Heading Example
+-------------------------
 
-Here is an example of the page title, **Last Updated** date, and different levels of headers for a full page:
+Here is an example of the page title, **Last Updated** date, and different levels of headings for a full page:
 
 .. code-block:: rst
 
@@ -211,7 +214,7 @@ Here is an example of the page title, **Last Updated** date, and different level
 
 .. tip::
 
-    For more details on header syntax in RST, see `reStructured Text Primer: Sections <https://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html#sections>`_.
+    For more details on heading syntax in RST, see `reStructured Text Primer: Sections <https://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html#sections>`_.
 
 .. _contribute_docs_hyperlinks:
 

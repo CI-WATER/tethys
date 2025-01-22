@@ -1,3 +1,5 @@
+.. _tethys_job_dask:
+
 *************
 Dask Job Type
 *************

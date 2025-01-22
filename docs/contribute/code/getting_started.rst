@@ -155,7 +155,7 @@ In this tutorial you will be making the output of the ``tethys version`` command
 
     If ``pyfiglet`` wasn't on Conda Forge, you would need to add it before the dependency could be added to Tethys Platform. Lucky us.
 
-4. Finally, add ``pyfiglet`` to the :file:`environment.yml` and the :file:`micro_environment.yml` files. The "Gen CLI commands" section seems as good as any:
+4. Finally, add ``pyfiglet`` to the :file:`environment.yml` and the :file:`micro_environment.yml` files (for more details on maintaining dependencies in Tethys Platform, see: :ref:`maintain_dependencies`). The "Gen CLI commands" section seems as good as any:
 
 .. code-block:: yaml
     :emphasize-lines: 4

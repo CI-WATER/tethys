@@ -1,3 +1,5 @@
+.. _tds_geoserver_reference:
+
 ****************************************
 GeoServer SpatialDatasetEngine Reference
 ****************************************

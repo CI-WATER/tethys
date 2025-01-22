@@ -37,6 +37,7 @@ These guides describe additional configuration that you can perform to add more 
     configuration/advanced/customize
     configuration/advanced/email_config
     configuration/advanced/lockout
+    configuration/advanced/self_hosted_js_deps
     configuration/advanced/social_auth
     configuration/advanced/multi_factor_auth
     configuration/advanced/webanalytics
