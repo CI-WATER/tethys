@@ -934,7 +934,7 @@ Partial Install Options
 * Upgrade using the install script!
 * Linux and Mac only.
 
-See: :doc:`../installation/developer_installation` and :doc:`../installation/update`
+See: :ref:`dev_setup_script` and :doc:`../installation/update`
 
 Command Line Interface
 ----------------------

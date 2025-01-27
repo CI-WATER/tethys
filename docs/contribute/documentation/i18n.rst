@@ -1,0 +1,10 @@
+.. _contribute_docs_i18n:
+
+********************
+Internationalization
+********************
+
+**Last Updated:** January 2025
+
+* i18n
+* https://www.sphinx-doc.org/en/master/usage/advanced/intl.html

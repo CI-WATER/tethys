@@ -1,3 +1,5 @@
+.. _tutorials_dask:
+
 *************
 Dask Tutorial
 *************

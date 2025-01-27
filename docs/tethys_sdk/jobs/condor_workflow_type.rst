@@ -1,3 +1,5 @@
+.. _tethys_jobs_condor_workflow:
+
 ************************
 Condor Workflow Job Type
 ************************

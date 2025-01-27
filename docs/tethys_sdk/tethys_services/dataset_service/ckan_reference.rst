@@ -1,3 +1,5 @@
+.. _tds_ckan_reference:
+
 *****************************
 CKAN Dataset Engine Reference
 *****************************

@@ -1,3 +1,5 @@
+.. _web_admin_setup:
+
 ***************
 Web Admin Setup
 ***************

@@ -1,3 +1,5 @@
+.. _supplementary_docker_testing:
+
 Test Docker Containers
 ======================
 

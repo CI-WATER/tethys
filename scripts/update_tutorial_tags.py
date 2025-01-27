@@ -6,7 +6,7 @@ from github.GithubException import BadCredentialsException
 # Github token with Contents read/write permissions on all of the tethysplatform tutorial repositories
 
 # Tethys Version to Tag For
-tethys_version = "4.2"
+tethys_version = "4.3"
 
 # Tutorial repos ({<repo_name>: {<branch>: <tag_prefix>}}
 tutorial_repos = {

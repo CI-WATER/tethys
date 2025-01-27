@@ -1,3 +1,5 @@
+.. _persistent_stores_api:
+
 *********************
 Persistent Stores API
 *********************
