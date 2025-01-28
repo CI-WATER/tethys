@@ -5,7 +5,7 @@ name: Tethys-CI
 on:
   push:
     tags:
-      - "*"
+    - "*"
 
 env:
   CONDA_BUILD_PIN_LEVEL: minor
@@ -18,58 +18,58 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        platform: [ubuntu-latest]
-        python-version: ["3.10", "3.11", "3.12"]
-        django-version: ["3.2", "4.2", "5.1"]
+        platform: [ ubuntu-latest ]
+        python-version: [ "3.10", "3.11", "3.12" ]
+        django-version: [ "3.2", "4.2", "5.1" ]
     steps:
-      # Checkout the source
-      - name: Checkout Source
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-      # Parse version parts from tag
-      - name: Parse version from tag
-        id: version
-        uses: release-kit/semver@v1
-      - name: Safe Tag
-        id: safetag
-        run: |
-          full_tag="${{ steps.version.outputs.full }}-py${{ matrix.python-version }}-dj${{ matrix.django-version }}";
-          # no "+" characters allowed in Docker tags
-          safe_tag="${full_tag//+/-}";
-          echo "safetag=$safe_tag" >> $GITHUB_OUTPUT;
-          echo $safe_tag;
-      - name: Log version
-        id: logversion
-        run: |
-          full_tag="${{ steps.version.outputs.full }}";
-          # no "+" characters allowed in Docker tags
-          safe_tag="${full_tag//+/-}";
-          echo "safetag=$safe_tag" >> $GITHUB_OUTPUT;
-          echo "Major: ${{ steps.version.outputs.major }}"
-          echo "Minor: ${{ steps.version.outputs.minor }}"
-          echo "Patch: ${{ steps.version.outputs.patch }}"
-          echo "Prerelease: ${{ steps.version.outputs.prerelease }}"
-          echo "Build: ${{ steps.version.outputs.build }}"
-          echo "Full: ${{ steps.version.outputs.full }}"
-          echo "Tag: ${{ steps.version.outputs.tag }}"
-          echo "Safe Tag: ${{ steps.safetag.outputs.safetag }}"
-      # Build the docker with version tag
-      - name: Build With Tag
-        run: |
-          full_tag="${{ steps.version.outputs.full }}";
-          # no "+" characters allowed in Docker tags
-          safe_tag="${full_tag//+/-}";
-          docker build -t ${{ env.DOCKER_UPLOAD_URL }}:"${{ steps.safetag.outputs.safetag }}" .;
-      # Authenticate docker
-      - name: Authenticate Docker
-        run: |
-          echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin;
-      # Upload docker
-      - name: Upload Docker With Tag
-        run: |
-          echo "Pushing to docker registry";
-          docker push ${{ env.DOCKER_UPLOAD_URL }}:${{ steps.safetag.outputs.safetag }};
+    # Checkout the source
+    - name: Checkout Source
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+    # Parse version parts from tag
+    - name: Parse version from tag
+      id: version
+      uses: release-kit/semver@v1
+    - name: Safe Tag
+      id: safetag
+      run: |
+        full_tag="${{ steps.version.outputs.full }}-py${{ matrix.python-version }}-dj${{ matrix.django-version }}";
+        # no "+" characters allowed in Docker tags
+        safe_tag="${full_tag//+/-}";
+        echo "safetag=$safe_tag" >> $GITHUB_OUTPUT;
+        echo $safe_tag;
+    - name: Log version
+      id: logversion
+      run: |
+        full_tag="${{ steps.version.outputs.full }}";
+        # no "+" characters allowed in Docker tags
+        safe_tag="${full_tag//+/-}";
+        echo "safetag=$safe_tag" >> $GITHUB_OUTPUT;
+        echo "Major: ${{ steps.version.outputs.major }}"
+        echo "Minor: ${{ steps.version.outputs.minor }}"
+        echo "Patch: ${{ steps.version.outputs.patch }}"
+        echo "Prerelease: ${{ steps.version.outputs.prerelease }}"
+        echo "Build: ${{ steps.version.outputs.build }}"
+        echo "Full: ${{ steps.version.outputs.full }}"
+        echo "Tag: ${{ steps.version.outputs.tag }}"
+        echo "Safe Tag: ${{ steps.safetag.outputs.safetag }}"
+    # Build the docker with version tag
+    - name: Build With Tag
+      run: |
+        full_tag="${{ steps.version.outputs.full }}";
+        # no "+" characters allowed in Docker tags
+        safe_tag="${full_tag//+/-}";
+        docker build -t ${{ env.DOCKER_UPLOAD_URL }}:"${{ steps.safetag.outputs.safetag }}" .;
+    # Authenticate docker
+    - name: Authenticate Docker
+      run: |
+        echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin;
+    # Upload docker
+    - name: Upload Docker With Tag
+      run: |
+        echo "Pushing to docker registry";
+        docker push ${{ env.DOCKER_UPLOAD_URL }}:${{ steps.safetag.outputs.safetag }};
 
   conda-build:
     name: Conda Build (${{ matrix.platform }})
@@ -77,129 +77,129 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        platform: [ubuntu-latest]
+        platform: [ ubuntu-latest ]
       # Checkout the source
     steps:
-      - name: Checkout Source
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-      # Parse version parts from tag
-      - name: Parse version from tag
-        id: version
-        uses: release-kit/semver@v1
-      - name: Safe Tag
-        id: safetag
-        run: |
-          full_tag="${{ steps.version.outputs.full }}";
-          # no "+" characters allowed in Docker tags
-          safe_tag="${full_tag//+/-}";
-          echo "safetag=$safe_tag" >> $GITHUB_OUTPUT;
-          echo $safe_tag;
-      - name: Log version
-        id: logversion
-        run: |
-          full_tag="${{ steps.version.outputs.full }}";
-          # no "+" characters allowed in Docker tags
-          safe_tag="${full_tag//+/-}";
-          echo "safetag=$safe_tag" >> $GITHUB_OUTPUT;
-          echo "Major: ${{ steps.version.outputs.major }}"
-          echo "Minor: ${{ steps.version.outputs.minor }}"
-          echo "Patch: ${{ steps.version.outputs.patch }}"
-          echo "Prerelease: ${{ steps.version.outputs.prerelease }}"
-          echo "Build: ${{ steps.version.outputs.build }}"
-          echo "Full: ${{ steps.version.outputs.full }}"
-          echo "Tag: ${{ steps.version.outputs.tag }}"
-          echo "Safe Tag: ${{ steps.safetag.outputs.safetag }}"
-      # Setup Tethys
-      - name: Setup Tethys
-        run: |
-          cd ..
-          bash ./tethys/scripts/install_tethys.sh --partial-tethys-install me -n tethys -s $PWD/tethys -x
-          . ~/miniconda/etc/profile.d/conda.sh
-          conda activate tethys
-          hash -r
-          conda config --set always_yes yes --set changeps1 no
-          conda update -q conda
-      # Export Conda Build Path
-      - name: Set Conda Build Path
-        run: |
-          echo "CONDA_BLD_PATH=/home/runner/conda-bld" >> $GITHUB_ENV
-      # Generate Conda Recipe With Constrained Dependencies
-      - name: Generate Conda Recipe
-        run: |
-          cd ..
-          . ~/miniconda/etc/profile.d/conda.sh;
-          conda activate tethys;
-          tethys gen metayaml -p ${CONDA_BUILD_PIN_LEVEL} --overwrite;
-      # Show Tethys Meta
-      - name: Show Tethys Meta
-        run: |
-          cd ..
-          cat ./tethys/conda.recipe/meta.yaml
-      # Build Conda
-      - name: Build Conda
-        run: |
-          cd ..
-          . ~/miniconda/etc/profile.d/conda.sh;
-          conda create -y -c conda-forge -n conda-build conda-build anaconda-client 
-          conda activate conda-build
-          conda config --set anaconda_upload no
-          mkdir -p ~/conda-bld
-          conda-build -c tethysplatform -c conda-forge ./tethys/conda.recipe
-      # Upload to Anaconda Cloud
-      - name: Upload to Conda Release Channel
-        if: ${{ steps.version.outputs.prerelease == '' }}
-        run: |
-          cd ..
-          . ~/miniconda/etc/profile.d/conda.sh;
-          conda activate conda-build;
-          echo "Publishing to release channel...";
-          anaconda -t "${{ secrets.CONDA_UPLOAD_TOKEN }}" upload -u ${{ secrets.CONDA_UPLOAD_USER }} $CONDA_BLD_PATH/noarch/tethys-platform*.tar.bz2 --force;
-      - name: Upload to Conda Dev Channel
-        if: ${{ steps.version.outputs.prerelease != '' }}
-        run: |
-          cd ..
-          . ~/miniconda/etc/profile.d/conda.sh;
-          conda activate conda-build;
-          echo "Publishing to dev channel...";
-          anaconda -t "${{ secrets.CONDA_UPLOAD_TOKEN }}" upload -u ${{ secrets.CONDA_UPLOAD_USER }} -l dev $CONDA_BLD_PATH/noarch/tethys-platform*.tar.bz2 --force;
+    - name: Checkout Source
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+    # Parse version parts from tag
+    - name: Parse version from tag
+      id: version
+      uses: release-kit/semver@v1
+    - name: Safe Tag
+      id: safetag
+      run: |
+        full_tag="${{ steps.version.outputs.full }}";
+        # no "+" characters allowed in Docker tags
+        safe_tag="${full_tag//+/-}";
+        echo "safetag=$safe_tag" >> $GITHUB_OUTPUT;
+        echo $safe_tag;
+    - name: Log version
+      id: logversion
+      run: |
+        full_tag="${{ steps.version.outputs.full }}";
+        # no "+" characters allowed in Docker tags
+        safe_tag="${full_tag//+/-}";
+        echo "safetag=$safe_tag" >> $GITHUB_OUTPUT;
+        echo "Major: ${{ steps.version.outputs.major }}"
+        echo "Minor: ${{ steps.version.outputs.minor }}"
+        echo "Patch: ${{ steps.version.outputs.patch }}"
+        echo "Prerelease: ${{ steps.version.outputs.prerelease }}"
+        echo "Build: ${{ steps.version.outputs.build }}"
+        echo "Full: ${{ steps.version.outputs.full }}"
+        echo "Tag: ${{ steps.version.outputs.tag }}"
+        echo "Safe Tag: ${{ steps.safetag.outputs.safetag }}"
+    # Setup Tethys
+    - name: Setup Tethys
+      run: |
+        cd ..
+        bash ./tethys/scripts/install_tethys.sh --partial-tethys-install me -n tethys -s $PWD/tethys -x
+        . ~/miniconda/etc/profile.d/conda.sh
+        conda activate tethys
+        hash -r
+        conda config --set always_yes yes --set changeps1 no
+        conda update -q conda
+    # Export Conda Build Path
+    - name: Set Conda Build Path
+      run: |
+        echo "CONDA_BLD_PATH=/home/runner/conda-bld" >> $GITHUB_ENV
+    # Generate Conda Recipe With Constrained Dependencies
+    - name: Generate Conda Recipe
+      run: |
+        cd ..
+        . ~/miniconda/etc/profile.d/conda.sh;
+        conda activate tethys;
+        tethys gen metayaml -p ${CONDA_BUILD_PIN_LEVEL} --overwrite;
+    # Show Tethys Meta
+    - name: Show Tethys Meta
+      run: |
+        cd ..
+        cat ./tethys/conda.recipe/meta.yaml
+    # Build Conda
+    - name: Build Conda
+      run: |
+        cd ..
+        . ~/miniconda/etc/profile.d/conda.sh;
+        conda create -y -c conda-forge -n conda-build conda-build anaconda-client 
+        conda activate conda-build
+        conda config --set anaconda_upload no
+        mkdir -p ~/conda-bld
+        conda-build -c tethysplatform -c conda-forge ./tethys/conda.recipe
+    # Upload to Anaconda Cloud
+    - name: Upload to Conda Release Channel
+      if: ${{ steps.version.outputs.prerelease == '' }}
+      run: |
+        cd ..
+        . ~/miniconda/etc/profile.d/conda.sh;
+        conda activate conda-build;
+        echo "Publishing to release channel...";
+        anaconda -t "${{ secrets.CONDA_UPLOAD_TOKEN }}" upload -u ${{ secrets.CONDA_UPLOAD_USER }} $CONDA_BLD_PATH/noarch/tethys-platform*.tar.bz2 --force;
+    - name: Upload to Conda Dev Channel
+      if: ${{ steps.version.outputs.prerelease != '' }}
+      run: |
+        cd ..
+        . ~/miniconda/etc/profile.d/conda.sh;
+        conda activate conda-build;
+        echo "Publishing to dev channel...";
+        anaconda -t "${{ secrets.CONDA_UPLOAD_TOKEN }}" upload -u ${{ secrets.CONDA_UPLOAD_USER }} -l dev $CONDA_BLD_PATH/noarch/tethys-platform*.tar.bz2 --force;
 
-      # BUILD micro-tethys-platform
+    # BUILD micro-tethys-platform
 
-      # Generate Conda Recipe With Constrained Dependencies
-      - name: Generate Conda Recipe - micro
-        run: |
-          cd ..
-          . ~/miniconda/etc/profile.d/conda.sh;
-          conda activate tethys;
-          tethys gen metayaml -p ${CONDA_BUILD_PIN_LEVEL} --micro --overwrite;
-      # Show Tethys Meta
-      - name: Show Tethys Meta - micro
-        run: |
-          cd ..
-          cat ./tethys/conda.recipe/meta.yaml
-      # Build Conda
-      - name: Build Conda - micro
-        run: |
-          cd ..
-          . ~/miniconda/etc/profile.d/conda.sh;
-          conda activate conda-build
-          conda-build -c tethysplatform -c conda-forge ./tethys/conda.recipe
-      # Upload to Anaconda Cloud
-      - name: Upload to Conda Release Channel - micro
-        if: ${{ steps.version.outputs.prerelease == '' }}
-        run: |
-          cd ..
-          . ~/miniconda/etc/profile.d/conda.sh;
-          conda activate conda-build;
-          echo "Publishing to release channel...";
-          anaconda -t "${{ secrets.CONDA_UPLOAD_TOKEN }}" upload -u ${{ secrets.CONDA_UPLOAD_USER }} $CONDA_BLD_PATH/noarch/micro-tethys-platform*.tar.bz2 --force;
-      - name: Upload to Conda Dev Channel - micro
-        if: ${{ steps.version.outputs.prerelease != '' }}
-        run: |
-          cd ..
-          . ~/miniconda/etc/profile.d/conda.sh;
-          conda activate conda-build;
-          echo "Publishing to dev channel...";
-          anaconda -t "${{ secrets.CONDA_UPLOAD_TOKEN }}" upload -u ${{ secrets.CONDA_UPLOAD_USER }} -l dev $CONDA_BLD_PATH/noarch/micro-tethys-platform*.tar.bz2 --force;
+    # Generate Conda Recipe With Constrained Dependencies
+    - name: Generate Conda Recipe - micro
+      run: |
+        cd ..
+        . ~/miniconda/etc/profile.d/conda.sh;
+        conda activate tethys;
+        tethys gen metayaml -p ${CONDA_BUILD_PIN_LEVEL} --micro --overwrite;
+    # Show Tethys Meta
+    - name: Show Tethys Meta - micro
+      run: |
+        cd ..
+        cat ./tethys/conda.recipe/meta.yaml
+    # Build Conda
+    - name: Build Conda - micro
+      run: |
+        cd ..
+        . ~/miniconda/etc/profile.d/conda.sh;
+        conda activate conda-build
+        conda-build -c tethysplatform -c conda-forge ./tethys/conda.recipe
+    # Upload to Anaconda Cloud
+    - name: Upload to Conda Release Channel - micro
+      if: ${{ steps.version.outputs.prerelease == '' }}
+      run: |
+        cd ..
+        . ~/miniconda/etc/profile.d/conda.sh;
+        conda activate conda-build;
+        echo "Publishing to release channel...";
+        anaconda -t "${{ secrets.CONDA_UPLOAD_TOKEN }}" upload -u ${{ secrets.CONDA_UPLOAD_USER }} $CONDA_BLD_PATH/noarch/micro-tethys-platform*.tar.bz2 --force;
+    - name: Upload to Conda Dev Channel - micro
+      if: ${{ steps.version.outputs.prerelease != '' }}
+      run: |
+        cd ..
+        . ~/miniconda/etc/profile.d/conda.sh;
+        conda activate conda-build;
+        echo "Publishing to dev channel...";
+        anaconda -t "${{ secrets.CONDA_UPLOAD_TOKEN }}" upload -u ${{ secrets.CONDA_UPLOAD_USER }} -l dev $CONDA_BLD_PATH/noarch/micro-tethys-platform*.tar.bz2 --force;
