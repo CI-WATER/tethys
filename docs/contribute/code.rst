@@ -36,6 +36,16 @@ Learn about the development process used for managing code contributions to Teth
 
    code/development_process
 
+Docker Development
+==================
+
+Help us improve the Docker image for Tethys Platform. This guide includes information on how to build the Docker image, run the Docker container, and how to contribute to the Docker image.
+
+.. toctree::
+   :maxdepth: 1
+
+   code/docker
+
 Writing Tests
 =============
 
