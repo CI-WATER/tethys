@@ -217,10 +217,12 @@ Updating Release Packages
 
 After the release is created, the release packages will need to be created before users can install the new release. This includes building and uploading the Docker images, Conda-Forge packages, and PyPI packages. The following sections describe how to update each of these packages.
 
+.. _contribute_deploy_conda_forge:
+
 Conda Forge
 +++++++++++
 
-The Conda-Forge pacakge for Tethys Platform is semi-automatically built by the Conda-Forge build system. Conda-Forge bots monitor the Tethys Platform GitHub repository for new versions and will automatically create a pull request to the `Tethys Platform Conda-Forge Feedstock <https://github.com/conda-forge/tethys-platform-feedstock>`_ when a new version tag is detected. This pull request will need to be reviewed and merged by one of the Feedstock Maintainers. Once the pull request is merged, the Conda-Forge build system will automatically build the new package and upload it to the `conda-forge channel`.
+The Conda-Forge package for Tethys Platform is semi-automatically built by the Conda-Forge build system. Conda-Forge bots monitor the Tethys Platform GitHub repository for new versions and will automatically create a pull request to the `Tethys Platform Conda-Forge Feedstock <https://github.com/conda-forge/tethys-platform-feedstock>`_ when a new version tag is detected. This pull request will need to be reviewed and merged by one of the Feedstock Maintainers. Once the pull request is merged, the Conda-Forge build system will automatically build the new package and upload it to the `conda-forge channel`.
 
 This semi-automated approach can take several days to resolve. If you need the Conda-Forge package to be built and uploaded immediately, you can manually create a new feedstock pull request. To do this, follow these steps:
 

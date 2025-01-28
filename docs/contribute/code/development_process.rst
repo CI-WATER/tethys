@@ -191,7 +191,7 @@ The code style check ensures that the code follows the project's coding standard
 Testing and Coverage
 --------------------
 
-The tests suite will be run everytime a new pull request is made or new changes are pushed to an branch associated with an open pull request. In addition, a coverage tool is used to analyze the code coverage of the tests. The coverage tool will generate a report that shows which parts of the code are covered by the tests and which parts are not. The following checks are run:
+The tests suite will be run every time a new pull request is made or new changes are pushed to an branch associated with an open pull request. In addition, a coverage tool is used to analyze the code coverage of the tests. The coverage tool will generate a report that shows which parts of the code are covered by the tests and which parts are not. The following checks are run:
 
 * **Python Tests** - The Python test suite is run run once for each combination of supported Python version x Django version x operating system to ensure compatibility across different environments. If any of the Python tests fail, this check will fail.
 
@@ -210,7 +210,7 @@ Condor Build
 
 The Condor build check ensures that the Condor package can be built successfully. The following checks are run:
 
-* **Condor Build** - The Condor package is built using a Conda recipe that is automatically generated. If the build fails, this check will fail.
+* **Condor Build** - The Conda package is built using a Conda recipe that is automatically generated. If the build fails, this check will fail.
 
 Docs Build
 ----------
