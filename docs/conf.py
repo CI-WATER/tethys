@@ -68,6 +68,7 @@ MOCK_MODULES = [
     "guardian.admin",
     "guardian.models",
     "guardian.shortcuts",
+    "guardian.utils",
     "mfa",
     "mfa.models",
     "model_utils",

@@ -47,14 +47,14 @@ Format
 
 The ``format`` job, titled "Check Black Formatting", is found in :file:`tethys.yml`. It uses the `Black <https://black.readthedocs.io/en/stable/>`_ code formatter to check if the Python code adheres to the project's coding standards. Using a code formatter simplifies code reviews and keeps the code consistent.
 
-This job makes use of the `psf/black <https://black.readthedocs.io/en/stable/integrations/github_actions.html>`_ GitHub action to run the Black formatter. At the time of writing, there was no configuration for Black for Tethys Platform (i.e. the default configuration is used), however it can be customized by adding a ``tool.black`` section to the :file:`pyproject.toml` file at the root of the project. See the `Black configuration documentation https://black.readthedocs.io/en/stable/usage_and_configuration/index.html>`_ for more information on configuring Black.
+This job makes use of the `psf/black <https://black.readthedocs.io/en/stable/integrations/github_actions.html>`_ GitHub action to run the Black formatter. At the time of writing, there was no configuration for Black for Tethys Platform (i.e. the default configuration is used), however it can be customized by adding a ``tool.black`` section to the :file:`pyproject.toml` file at the root of the project. See the `Black configuration documentation <https://black.readthedocs.io/en/stable/usage_and_configuration/index.html>`_ for more information on configuring Black.
 
 Tests
 ~~~~~
 
 The ``test`` job, titled "Tests (<os>, <django_version>, <python_version>)", is found in the :file:`tethys.yml`. This job is a matrix job, creating a new copy of the job for each combination of os (platform), Django version, and Python version, as defined in ``tests.strategy.matrix``. The matrix parameters are passed to the job and used to set up the test runs on the corresponding platform and with the correct versions of Django and Python installed. The result is the Python test suite is run once for each combination of listed Python version x Django version x operating system to ensure compatibility across different environments.
 
-The ``test`` jobs are assisted by the :file:`scripts/install_tethys.sh` script, which is run at the start of each job to install the Tethys Platform dependencies and set up the environment for testing. The tests are run using the `unittest <https://docs.python.org/3/library/unittest.html>`_ framework via a custom ``tethys test`` command. Each job generates a code coverage report, but the coverage check is evaluated using the coverage results for only one of the jobs (see :ref:`code_ci_coverall` below for more details).
+The ``test`` jobs are assisted by the :file:`scripts/install_tethys.sh` script, which is run at the start of each job to install the Tethys Platform dependencies and set up the environment for testing. The tests are run using the `unittest <https://docs.python.org/3/library/unittest.html>`_ framework via a custom ``tethys test`` command. Each job generates a code coverage report, but the coverage check is evaluated using the coverage results for only one of the jobs (see :ref:`code_ci_coveralls` below for more details).
 
 Docker Build
 ~~~~~~~~~~~~
