@@ -23,6 +23,10 @@ Docker is self-described as "an open platform for developing, shipping, and runn
     docker/docker_compose
     docker/tethys_docker_reference
 
+.. note::
+
+    If you are wanting to contribute to the development of the base Docker image for Tethys Platform, please refer to the :ref:`contribute_code_docker` documentation.
+
 Additional Resources
 --------------------
 

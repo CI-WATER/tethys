@@ -1,7 +1,7 @@
 version: "3.2"
 services:
   tethys:
-    container_name: tethyscore
+    container_name: tethys
     image: tethysplatform/tethys-core
     build:
       cache_from:
@@ -10,9 +10,9 @@ services:
     ports:
       - "80:80"
     environment:
-      TETHYS_DB_SUPERUSER: "tethys_super"
-      TETHYS_DB_SUPERUSER_PASS: "pass"
-      CLIENT_MAX_BODY_SIZE: "75M"
+      POSTGRES_PASSWORD: "mysecretpassword"
+      TETHYS_DB_HOST: "db"
+      TETHYS_DB_PORT: "5432"
     healthcheck:
       test: ["CMD", "./liveness-probe.sh"]
       interval: 30s  # docker default
@@ -28,4 +28,4 @@ services:
     restart: always
     environment:
       POSTGRES_USER: "postgres"
-      POSTGRES_PASSWORD: "pass"
+      POSTGRES_PASSWORD: "mysecretpassword"

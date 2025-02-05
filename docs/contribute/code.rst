@@ -45,6 +45,7 @@ Help us improve the Docker image for Tethys Platform. This guide includes inform
    :maxdepth: 1
 
    code/docker
+   ../installation/production/docker/tethys_docker_reference
 
 Writing Tests
 =============
