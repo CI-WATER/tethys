@@ -201,7 +201,7 @@ def clear_workspace(request, root_url):
         app = get_app_class(app)
 
         user = request.user
-        workspace = get_user_workspace(app, user)
+        workspace = get_user_workspace(app, user, bypass_quota=True)
 
         app.pre_delete_user_workspace(user)
         workspace.clear()
@@ -231,12 +231,13 @@ def manage_storage(request):
     """
     Handle clear workspace requests.
     """
+   
 
     apps = SingletonHarvester().apps
     user = request.user
 
     for app in apps:
-        workspace = get_user_workspace(app, user)
+        workspace = get_user_workspace(app, user, bypass_quota=True)
         app.current_use = _convert_storage_units("gb", workspace.get_size("gb"))
 
     codename = "user_workspace_quota"
