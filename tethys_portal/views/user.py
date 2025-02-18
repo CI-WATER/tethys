@@ -231,7 +231,6 @@ def manage_storage(request):
     """
     Handle clear workspace requests.
     """
-   
 
     apps = SingletonHarvester().apps
     user = request.user

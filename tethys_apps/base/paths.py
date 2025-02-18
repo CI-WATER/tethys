@@ -373,7 +373,7 @@ def get_user_workspace(
         app_or_request (TethysAppBase, TethysApp, or HttpRequest): The Tethys app class that is defined in app.py or HttpRequest to app endpoint.
         user_or_request (User or HttpRequest): Either an HttpRequest with active user session or Django User object.
         bypass_quota (bool): Whether to check the user's workspace/media quota.
-        
+
     Raises:
         ValueError: if app_or_request or user_or_request are not correct types.
         AssertionError: if quota for the user workspace/media directory has been exceeded.
