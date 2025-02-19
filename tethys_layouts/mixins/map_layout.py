@@ -1003,14 +1003,14 @@ class MapLayoutMixin:
             divisions[f"{prefix}{i}"] = f"{(m * i + b):.{value_precision}f}"
 
             if color_ramp in cls.COLOR_RAMPS.keys():
-                divisions[
-                    f"{color_prefix}{i}"
-                ] = f"{cls.COLOR_RAMPS[color_ramp][(i - first_division) % len(cls.COLOR_RAMPS[color_ramp])]}"
+                divisions[f"{color_prefix}{i}"] = (
+                    f"{cls.COLOR_RAMPS[color_ramp][(i - first_division) % len(cls.COLOR_RAMPS[color_ramp])]}"
+                )
             else:
                 # use default color ramp
-                divisions[
-                    f"{color_prefix}{i}"
-                ] = f"{cls.COLOR_RAMPS['Default'][(i - first_division) % len(cls.COLOR_RAMPS['Default'])]}"
+                divisions[f"{color_prefix}{i}"] = (
+                    f"{cls.COLOR_RAMPS['Default'][(i - first_division) % len(cls.COLOR_RAMPS['Default'])]}"
+                )
         if no_data_value is not None:
             divisions["val_no_data"] = no_data_value
         return divisions

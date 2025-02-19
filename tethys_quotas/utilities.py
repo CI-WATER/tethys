@@ -224,10 +224,10 @@ def _convert_storage_units(units, amount):
 
 def _get_storage_units():
     return [
-        (1024 ** 5, " PB"),
-        (1024 ** 4, " TB"),
-        (1024 ** 3, " GB"),
-        (1024 ** 2, " MB"),
-        (1024 ** 1, " KB"),
-        (1024 ** 0, (" byte", " bytes")),
+        (1024**5, " PB"),
+        (1024**4, " TB"),
+        (1024**3, " GB"),
+        (1024**2, " MB"),
+        (1024**1, " KB"),
+        (1024**0, (" byte", " bytes")),
     ]
