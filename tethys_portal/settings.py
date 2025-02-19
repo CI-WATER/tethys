@@ -623,7 +623,7 @@ for settings_module in ADDITIONAL_SETTINGS_FILES:
         setattr(this_module, setting, value)
 
 # TODO backward compatibility setting. Remove in Tethys 5.0
-USE_OLD_WORKSPACES_API = portal_config_settings.pop("USE_OLD_WORKSPACES_API", False)
+USE_OLD_WORKSPACES_API = portal_config_settings.pop("USE_OLD_WORKSPACES_API", True)
 
 # Add any additional specified settings to module
 for setting, value in portal_config_settings.items():
