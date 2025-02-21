@@ -12,6 +12,15 @@ configure them interactively during the installation process. If there are any l
 the installation process, the install command will automatically run ``tethys syncstores {app_name}``. Finally, any
 scripts listed in the install.yml will be run to finish the installation.
 
+.. important::
+
+    Starting with Tethys 5.0 or if you are using ``micro-tethys-platform``, you will need to install ``conda`` itself within your tethys conda environment to be able to install app and extension dependencies with ``conda``. Otherwise, you will receive a prompt to attempt to use pip instead.
+
+    .. code-block:: bash
+
+        # conda: conda-forge channel strongly recommended
+        conda install -c conda-forge conda
+
 .. argparse::
    :module: tethys_cli
    :func: tethys_command_parser

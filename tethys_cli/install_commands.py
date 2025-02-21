@@ -10,7 +10,12 @@ import sys
 
 from django.core.exceptions import ObjectDoesNotExist, ValidationError
 
-from tethys_cli.cli_colors import write_msg, write_error, write_warning, write_success
+from tethys_cli.cli_colors import (
+    write_msg,
+    write_error,
+    write_warning,
+    write_success,
+)
 from tethys_cli.services_commands import services_list_command
 from tethys_cli.cli_helpers import (
     setup_django,
@@ -593,7 +598,11 @@ def configure_services_from_file(services, app_name):
                             continue
 
                         find_and_link(
-                            service_type, setting_name, service_id, app_name, setting
+                            service_type,
+                            setting_name,
+                            service_id,
+                            app_name,
+                            setting,
                         )
 
                     if not setting_found:
@@ -748,24 +757,38 @@ def install_command(args):
                     if has_module(conda_run):
                         conda_config = requirements_config["conda"]
                         install_packages(
-                            conda_config, update_installed=args.update_installed
+                            conda_config,
+                            update_installed=args.update_installed,
                         )
                     else:
-                        write_warning(
-                            "Conda is not installed. Attempting to install conda packages with pip..."
-                        )
-                        try:
-                            call(
-                                [
-                                    "pip",
-                                    "install",
-                                    *requirements_config["conda"]["packages"],
-                                ]
+                        write_warning("Conda is not installed...")
+                        if not args.quiet:
+                            proceed = input(
+                                "Attempt to install conda packages with pip and continue the installation process: [y/n]"
                             )
-                        except Exception as e:
-                            write_error(
-                                f"Installing conda packages with pip failed with the following exception: {e}"
-                            )
+                            while proceed not in ["y", "n", "Y", "N"]:
+                                proceed = input('Please enter either "y" or "n": ')
+                        else:
+                            proceed = "y"
+
+                        if proceed in ["y", "n", "Y", "N"]:
+                            if proceed in ["y", "Y"]:
+                                try:
+                                    call(
+                                        [
+                                            "pip",
+                                            "install",
+                                            *requirements_config["conda"]["packages"],
+                                        ]
+                                    )
+                                except Exception as e:
+                                    write_error(
+                                        f"Installing conda packages with pip failed with the following exception: {e}"
+                                    )
+                            else:
+                                write_msg("\nInstall Command cancelled.")
+                                exit(0)
+
                 if validate_schema("pip", requirements_config):
                     write_msg("Running pip installation tasks...")
                     call(["pip", "install", *requirements_config["pip"]])
