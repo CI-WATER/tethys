@@ -209,7 +209,6 @@ class TestTethysPath(unittest.TestCase):
 
 
 class TestTethysPathHelpers(unittest.TestCase):
-
     def setUp(self):
         from django.contrib.auth.models import User
         from tethys_apps.models import TethysApp
