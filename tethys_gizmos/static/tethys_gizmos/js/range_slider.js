@@ -38,7 +38,10 @@ var TETHYS_RANGE_SLIDER = (function() {
 	/*
 	 * Library object that contains public facing functions of the package.
 	 */
-	public_interface = {};
+	// TODO Make sure this is ok
+	public_interface = {
+		init_range_sliders: init_range_sliders,
+	};
 
 	// Initialization: jQuery function that gets called when
 	// the DOM tree finishes loading
@@ -49,3 +52,9 @@ var TETHYS_RANGE_SLIDER = (function() {
 	return public_interface;
 
 }()); // End of package wrapper
+
+/* This statement for testing coverage purposes */
+/* istanbul ignore next */
+if (typeof module !== "undefined" && module.exports) {
+	module.exports = TETHYS_RANGE_SLIDER;
+}

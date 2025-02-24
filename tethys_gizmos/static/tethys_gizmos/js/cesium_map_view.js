@@ -896,8 +896,49 @@ var CESIUM_MAP_VIEW = (function() {
 		cesium_initialize_all();
 	});
 
+    // Expose private functions for testing
+    public_interface._testOnly = {
+        cesium_base_map_init, 
+        cesium_globe_init, 
+        cesium_map_view_init, 
+        cesium_initialize_all, 
+        cesium_widgets_init,
+ 	    clock_options_init, 
+        cesium_view, 
+        cesium_terrain,
+        cesium_image_layers, 
+        cesium_load_model, 
+        cesium_load_entities,
+ 	    cesium_load_primitives, 
+        cesium_models, 
+        update_field, 
+        option_checker,
+        cesium_shadow_options, 
+        textarea_string_dict, 
+        cesium_logging,
+        is_defined, 
+        is_empty_or_undefined, 
+        in_array, 
+        string_to_object, 
+        string_to_function, 
+        string_w_arg_to_function,
+        build_options, 
+        build_options_string, 
+        need_to_run, 
+        cesium_options, 
+        json_parser, 
+        clear_data,
+        cesium_time_callback
+    };
+
 	return public_interface;
 
 }()); // End of package wrapper
 // NOTE: that the call operator (open-closed parenthesis) is used to invoke the library wrapper
 // function immediately after being parsed.
+
+/* This statement for testing coverage purposes */
+/* istanbul ignore next */
+if (typeof module !== "undefined" && module.exports) {
+    module.exports = CESIUM_MAP_VIEW;
+}

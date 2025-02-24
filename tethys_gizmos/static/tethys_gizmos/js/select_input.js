@@ -55,3 +55,9 @@ var TETHYS_SELECT_INPUT = (function() {
 /*****************************************************************************
  *                      Public Functions
  *****************************************************************************/
+
+/* This statement for testing coverage purposes */
+/* istanbul ignore next */
+if (typeof module !== "undefined" && module.exports) {
+    module.exports = TETHYS_SELECT_INPUT;
+}

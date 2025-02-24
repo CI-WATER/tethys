@@ -51,3 +51,9 @@ var TETHYS_DATATABLE_VIEW = (function() {
 /*****************************************************************************
  *                      Public Functions
  *****************************************************************************/
+
+/* This statement for testing coverage purposes */
+/* istanbul ignore next */
+if (typeof module !== "undefined" && module.exports) {
+    module.exports = { ...TETHYS_DATATABLE_VIEW} ;
+}
